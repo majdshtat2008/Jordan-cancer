@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>معلومات عن مرض السرطان في الأردن</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google font for Arabic -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <!-- simple inline logo -->
+        <div class="logo-wrap">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="1" y="1" width="22" height="22" rx="4" fill="#fff" opacity="0.06"/>
+            <path d="M12 3c1.657 0 3 1.343 3 3 0 1.452-1.022 2.662-2.38 2.93L12 9.1l-.62-.17C10.022 8.662 9 7.452 9 6c0-1.657 1.343-3 3-3z" fill="#fff" opacity="0.95"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>السرطان في الأردن</h1>
+          <p class="tagline">معلومات موثوقة — نسب وإرشادات للوقاية والرعاية</p>
+        </div>
+      </div>
+
+      <button id="mobile-menu-toggle" class="mobile-menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+      <nav id="main-nav" class="main-nav" aria-label="الرئيسية">
+        <ul>
+          <li><a href="#stats">الإحصاءات</a></li>
+          <li><a href="#cards">معلومات</a></li>
+          <li><a href="#prevention">الوقاية</a></li>
+          <li><a href="#sources">المصادر</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2>لمحة سريعة</h2>
+        <p id="hero-text">موقع توعوي يقدم معلومات عن أنواع السرطان، طرق الوقاية، وأحدث الإحصاءات في الأردن مع مصادر موثوقة.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#stats">عرض الإحصاءات</a>
+          <a class="btn" href="#prevention">طرق الوقاية</a>
+        </div>
+      </div>
+      <!-- small hero stats -->
+      <div class="hero-stats">
+        <div class="stat card">
+          <div class="stat-kicker">حالات جديدة/سنة</div>
+          <div class="stat-number" id="stat-cases">—</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-kicker">الوفيات/سنة</div>
+          <div class="stat-number" id="stat-deaths">—</div>
+        </div>
+        <div class="stat card">
+          <div class="stat-kicker">الأكثر شيوعاً</div>
+          <div class="stat-number" id="stat-top">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats">
+      <h2>الإحصاءات الرسمية</h2>
+      <div id="stats-grid" class="grid stats-grid"></div>
+      <div class="charts">
+        <div class="chart-card card">
+          <h3>نسبة الحالات حسب النوع (نموذجي)</h3>
+          <canvas id="chart-types" width="400" height="200"></canvas>
+        </div>
+        <div class="chart-card card">
+          <h3>الاتجاه السنوي (نموذجي)</h3>
+          <canvas id="chart-trend" width="400" height="200"></canvas>
+        </div>
+      </div>
+      <p class="note">الأرقام المعروضة نَماذج توضيحية — سيتم تحديثها بالأرقام الرسمية بعد الموافقة.</p>
+    </section>
+
+    <section id="cards">
+      <h2>معلومات أساسية وبطاقات</h2>
+      <div id="cards-grid" class="grid cards-grid"></div>
+    </section>
+
+    <section id="features">
+      <h2>مزايا الموقع</h2>
+      <div class="grid features-grid">
+        <div class="card">
+          <h3>محتوى موثوق</h3>
+          <p>مصادر مرجعية قابلة للتتبع (GLOBOCAN, KHCC, وزارة الصحة).</p>
+        </div>
+        <div class="card">
+          <h3>تصميم متوافق</h3>
+          <p>واجهة متجاوبة وسهلة القراءة على الهاتف والحاسوب.</p>
+        </div>
+        <div class="card">
+          <h3>قابلة للتحديث</h3>
+          <p>تحديث بيانات سهل عبر ملف JSON أو واجهة إدارة لاحقاً.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="prevention">
+      <h2>الوقاية</h2>
+      <ul id="prevention-list"></ul>
+    </section>
+
+    <section id="sources">
+      <h2>المصادر</h2>
+      <ul id="sources-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>مُعد بواسطة فريق توعية: بيانات قابلة للتحديث. للمزيد تواصل معنا.</p>
+      <p class="small">بعض الصور المستخدمة من Unsplash (مرخّصة للاستخدام). راجع قسم المصادر للروابط.</p>
+    </div>
+  </footer>
+
+  <!-- Chart.js for demo charts (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

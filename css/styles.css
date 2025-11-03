@@ -1,0 +1,78 @@
+/* أساسي */
+:root{
+  --accent:#0077b6;
+  --accent-2:#0096c7;
+  --muted:#666;
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+body{font-family:'Cairo', Arial, Helvetica, sans-serif;background:var(--bg);color:#111;margin:0;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:20px 0}
+.header-grid{display:flex;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-size:1.4rem;font-weight:700}
+.tagline{opacity:.95;margin-top:6px;font-size:0.95rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px}
+.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:6px 10px;border-radius:6px;transition:background .15s}
+.main-nav a:hover{background:rgba(255,255,255,0.08)}
+/* mobile menu */
+.mobile-menu{display:none;background:transparent;border:0;color:#fff;font-size:1.4rem}
+.logo-wrap{display:inline-flex;align-items:center;margin-bottom:6px}
+.brand-text{display:inline-block;margin-right:12px}
+h2{color:var(--accent);margin-top:28px}
+.note{color:var(--muted);font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:12px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06);display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0}
+.stats-number{font-size:1.6rem;color:var(--accent);font-weight:700}
+.prevention-list{list-style:disc;padding-inline-start:20px}
+.site-footer{padding:22px 0;text-align:center;color:var(--muted);margin-top:28px}
+.small{font-size:0.85rem;color:var(--muted);margin-top:6px}
+
+/* Hero */
+.hero{position:relative;border-radius:12px;overflow:hidden;margin-top:18px;margin-bottom:12px;min-height:220px;background-image:url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;padding-bottom:80px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,119,182,0.55), rgba(0,150,199,0.35));mix-blend-mode:multiply}
+.hero-content{position:relative;color:#fff;padding:28px;max-width:780px}
+.hero-content h2{margin:0 0 8px 0;font-size:1.6rem}
+.hero-content p{margin:0 0 12px 0}
+.hero-cta{display:flex;gap:10px;margin-top:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.06)}
+.btn.primary{background:#fff;color:var(--accent);font-weight:700}
+
+/* Cards with images */
+.cards-grid .card{padding:0;overflow:hidden}
+.card img{display:block;width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0}
+.card-body{padding:14px}
+
+/* Stats grid special */
+.stats-grid .card{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.stat-kicker{font-size:0.9rem;color:var(--muted)}
+.stat-number{font-size:2rem;color:var(--accent);font-weight:800}
+
+/* hero stats (floating small cards) */
+.hero-stats{display:flex;gap:12px;position:absolute;right:20px;bottom:10px;z-index:30}
+.hero-stats .stat{min-width:150px;padding:12px;background:linear-gradient(180deg,#fff,#fbfdff);color:#0b2951;border-radius:10px;box-shadow:0 8px 26px rgba(2,6,23,0.08);backdrop-filter:blur(4px)}
+.hero-stats .stat-kicker{color:#666;font-size:0.9rem}
+.hero-stats .stat-number{color:var(--accent);font-size:1.4rem}
+
+@media (max-width:520px){
+  .header-grid{flex-direction:column;align-items:flex-start;gap:10px}
+  .hero{min-height:180px}
+  .hero-content h2{font-size:1.2rem}
+  .main-nav{display:none;width:100%}
+  .main-nav.open{display:block}
+  .mobile-menu{display:inline-block}
+  .hero-stats{position:static;flex-wrap:wrap;margin-top:12px}
+}
+
+/* charts layout */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.chart-card canvas{width:100%;height:220px}
+.features-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+@media (max-width:880px){.charts{grid-template-columns:1fr}}
+
+/* تحسين للكتابة من اليمين لليسار */
+html[dir="rtl"] .container{direction:rtl}
